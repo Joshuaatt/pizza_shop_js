@@ -8,19 +8,13 @@ var Pizza = {
   }
 };
 
+$(function() {
+  $("form#pizza-info").submit(function(event) {
+    event.preventDefault();
 
+    var inputtedSize = $("input#pizza-size").val();
+    var newPizza = { size: inputtedSize };
 
-
-
-
-// ---------------------------------------------------------
-
-// if (this.size <= 9) {
-//   return "2 slices";
-// } else if (this.size > 9 && < 15) {
-//   return "4 slices";
-// } else if (this.size >=15) {
-//
-// } else {
-//   return "something is wrong"
-// }
+    $("ul#user-pizza").text("Your pizza is " + newPizza.size + " inches");
+  });
+});
